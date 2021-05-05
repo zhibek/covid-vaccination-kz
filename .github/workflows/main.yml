@@ -4,7 +4,7 @@ name: main
 on:
   push:
   schedule:
-    - cron: "20,50 8-18 * * *"
+    - cron: "20,50 6-16 * * *"
 
 jobs:
   poll_transform:
