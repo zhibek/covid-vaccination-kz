@@ -105,9 +105,16 @@ for target_type in TARGET_PATHS:
                     today_value = item['second_cumulative']
 
                 existing_value = row[target_column]
+
                 df.loc[i, target_column] = today_value
                 new_value = int(today_value) - int(existing_value)
-                if new_value is None or new_value < 0:
+
+                if DEBUG:
+                    print('{} ({}): today={}, existing={}, new={}'.format(
+                        region_en, target_column, today_value, existing_value, new_value
+                    ))
+
+                if new_value is None:
                     raise Exception('Unexpected value in "{}": "{}"'.format(region_en, new_value))
 
                 if target_column == 'first':
