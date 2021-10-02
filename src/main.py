@@ -37,7 +37,7 @@ REGIONS = {
 HEADERS = ['region_en']
 
 print('Requesting data from "{}"'.format(SOURCE_URL))
-result = requests.get(SOURCE_URL)
+result = requests.get(SOURCE_URL, verify=False)
 soup = BeautifulSoup(result.content, features='html.parser')
 results = soup.select(SOURCE_CSS_PATH)
 
