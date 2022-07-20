@@ -1,10 +1,12 @@
 
 name: main
 
-on:
-  push:
-  schedule:
-    - cron: "20,50 6-16 * * *"
+# Disabled since 2022-07-19 - KZ regions changed, breaking script
+on: []
+#on:
+#  push:
+#  schedule:
+#    - cron: "20,50 6-16 * * *"
 
 jobs:
   poll_transform:
